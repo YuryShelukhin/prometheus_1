@@ -99,7 +99,7 @@ sudo kill 46499
 ## Решение 2
 
 1-2.  Скачаем node exporter  
-wget https://github.com/prometheus/node_exporter/releases/download/v1.9.1/node_exporter-1.9.1.linux-386.tar.gz
+wget https://github.com/prometheus/node_exporter/releases/download/v1.9.1/node_exporter-1.9.1.linux-386.tar.gz  
 извлекем архив  
 ~/Downloads$ tar vxf node_exporter-1.9.1.linux-386.tar.gz
 Запустим
@@ -107,14 +107,14 @@ wget https://github.com/prometheus/node_exporter/releases/download/v1.9.1/node_e
 Создадим директорию.   
 sudo mkdir /etc/prometheus/node-exporter  
 Cкопируем утилиту.  
-sudo cp ./node_exporter /etc/prometheus/node-exporter 
+sudo cp ./node_exporter /etc/prometheus/node-exporter   
 Передадим права на этот файл пользователю prometheus.  
 sudo chown -R prometheus:prometheus /etc/prometheus/node-exporter
-3. Создадим сервис
+3. Создадим сервис  
 vim /etc/systemd/system/node-exporter.service
 sudo systemctl enable node-exporter.service  
-sudo systemctl start node-exporter.service  
-4. Проверим работу сервиса
+sudo systemctl start node-exporter.service    
+4. Проверим работу сервиса  
 <img src = "img/2-2.png" width = 60%> 
 
 ---
@@ -138,9 +138,10 @@ sudo systemctl start node-exporter.service
 
 1-2. Отредактируем файл /etc/prometheus/prometheus.yml  
 <img src = "img/3-1.png" width = 60%>   
-3.Перезапустим prometheus  
-sudo systemctl restart prometheus  
-4. Проверим
+3.Перезапустим prometheus    
+sudo systemctl restart prometheus 
+
+4. Проверим  
 <img src = "img/3-2.png" width = 60%>  
 <img src = "img/3-3.png" width = 60%>  
 <img src = "img/3-4.png" width = 60%>  
@@ -164,13 +165,13 @@ sudo systemctl restart prometheus
 ## Решение 4*
 
 Возьмем код на сайте Grafana.  
-<img src = "img/4-1.png" width = 60%>
+<img src = "img/4-1.png" width = 60%>  
 sudo apt-get install -y adduser libfontconfig1 musl  
 wget https://dl.grafana.com/oss/release/grafana_12.0.0_amd64.deb  
 sudo dpkg -i grafana_12.0.0_amd64.deb
 Настроим сервис.
 sudo systemctl enable grafana-server.service   
-sudo systemctl start grafana-server.service
+sudo systemctl start grafana-server.service  
 Обратимся к стадартному порту 3000 (admin/admin)
 <img src = "img/4-2.png" width = 60%>
 <img src = "img/4-3.png" width = 60%>
@@ -184,16 +185,14 @@ sudo systemctl start grafana-server.service
 
 ## Решение 5*
 
-Возьмем код на сайте Grafana.  
-<img src = "img/5-1.png" width = 60%>
-sudo apt-get install -y adduser libfontconfig1 musl  
-wget https://dl.grafana.com/oss/release/grafana_12.0.0_amd64.deb  
-sudo dpkg -i grafana_12.0.0_amd64.deb
-Настроим сервис.
-sudo systemctl enable grafana-server.service   
-sudo systemctl start grafana-server.service
-Обратимся к стадартному порту 3000 (admin/admin)
-<img src = "img/5-2.png" width = 60%>
+<img src = "img/5-1.png" width = 60%>  
+<img src = "img/5-2.png" width = 60%>  
 <img src = "img/5-3.png" width = 60%>  
+<img src = "img/5-4.png" width = 60%>  
+<img src = "img/5-5.png" width = 60%>  
+<img src = "img/5-6.png" width = 60%>  
+<img src = "img/5-7.png" width = 60%>  
+<img src = "img/5-8.png" width = 60%> 
+ 
 ---
 
